@@ -1,0 +1,153 @@
+html {
+  font-family: PT Sans,Helvetica,Arial,sans-serif;
+}
+
+.logo {
+  width: 100px;
+}
+
+nav a:hover {
+  background-color: #cccccc;
+}
+
+.row {
+  display: flex;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  width: calc(100% - 100px);
+  background-color: white;
+  padding: 10px 50px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  align-items: center;
+}
+
+main {
+  padding: 100px 50px 20px 50px;
+  background-color: #ecebeb;
+  font-size: 18px;
+}
+
+footer {
+  padding: 20px 50px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  background-color: #333;
+}
+
+.search input {
+  width: 100%;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqEe3UJlQQEGbNiWmxCCfp-hqxiKyUtcmn1g&s');
+  background-size: 20px;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+}
+
+.profile input {
+  width: 40%;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+}
+
+nav ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+nav a {
+  color: #6e6e6e;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+nav ul li {
+  padding: 0 5px;
+}
+
+div a {
+  color: black;
+}
+
+div a:hover {
+  color: #fc8507;
+}
+
+.basket {
+  text-align: center;
+  vertical-align: center;
+  border: 2px solid white;
+  border-radius: 10px;
+  padding: 10px 0;
+  background-color: white;
+  margin: 10px 0;
+}
+
+.profile {
+  text-align: center;
+  vertical-align: center;
+  border: 2px solid white;
+  border-radius: 10px;
+  padding: 10px 0;
+  background-color: white;
+  margin: 10px 0;
+}
+
+.basket p {
+  font-size: 17px;
+}
+
+.basket a {
+  color: blue;
+}
+
+.price {
+  font-weight: bold;
+}
+
+.item {
+  border: 2px solid white;
+  border-radius: 10px;
+  padding: 10px 0;
+  display: flex;
+  background-color: white;
+  margin: 10px 0;
+}
+
+.product-img {
+  padding: 0 20px;
+}
+
+.item .price-container {
+  text-align: center;
+  padding: 0 20px;
+}
+
+.btn-cart {
+  background-color: #fc8507;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  color: white;
+}
+
+.btn-cart:hover {
+  background-color: #ffa218;
+  cursor: pointer;
+}
