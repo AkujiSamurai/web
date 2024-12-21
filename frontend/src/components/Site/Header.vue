@@ -22,12 +22,23 @@
           </router-link>
         </li>
         <li>
-          <router-link to="/profile"><img width="25px"
+          <router-link :to="profileLink"><img width="25px"
                                           src="@/assets/img/profile.png"/>
-            &nbsp;Войти
+            &nbsp;Профиль
           </router-link>
         </li>
       </ul>
     </nav>
   </header>
 </template>
+
+<script>
+export default {
+  computed: {
+    profileLink() {
+      const user = localStorage.getItem('user');
+      return user ? '/profile' : '/login';
+    }
+  }
+}
+</script>

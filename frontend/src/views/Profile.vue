@@ -1,16 +1,29 @@
+<script>
+export default {
+  data() {
+    return {
+      user: null,
+    };
+  },
+  created() {
+    let userData = localStorage.getItem('user');
+    if (userData) {
+      this.user = JSON.parse(userData);
+    }
+  },
+};
+</script>
+
 <template>
-  <main>
-    <div class = "profile">
-      <h2 class="h2-profile">Войти
-        или зарегистрироваться</h2>
-      <input type="text" placeholder="E-mail">
-      <button class="btn-cart">Продолжить</button>
-    </div>
-  </main>
+<main>
+<div class="profile">
+  <h3>Вы вошли в аккаунт: {{ user.login }}</h3>
+</div>
+</main>
 </template>
 
-<style>
-.h2-profile {
-  margin-top: 75px;
+<style scoped>
+h3 {
+  margin-top: 120px;
 }
 </style>
