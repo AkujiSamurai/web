@@ -8,6 +8,12 @@ use Illuminate\Support\Facades\Auth;
 
 class UserControllers extends Controller
 {
+    public function info($id)
+    {
+        $user = User::query()->where("id", $id)->first();
+        return response()->json($user);
+    }
+    
     public function register(Request $request)
     {
         $fields = $request->validate([

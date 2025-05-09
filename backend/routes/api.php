@@ -26,6 +26,7 @@ Route::put('increaseCount', [BasketControllers::class, 'increaseCount']);
 Route::put('decreaseCount', [BasketControllers::class, 'decreaseCount']);
 Route::delete('delete/{id}', [BasketControllers::class, 'delete']);
 
+Route::get('profile/{id}', [UserControllers::class, 'info']);
 Route::post('register', [UserControllers::class, 'register']);
 Route::post('login', [UserControllers::class, 'login']);
 

@@ -1,0 +1,28 @@
+.item {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.img {
+  height: 315px;
+  width: 315px;
+}
+.name {
+  margin: 5px;
+  font-size: 16px;
+  padding-left: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
+.name:hover {
+  color: #de231e;
+}
+.price {
+  margin: 5px;
+  font-size: 20px;
+  font-weight: 600;
+  padding-left: 10px;
+}

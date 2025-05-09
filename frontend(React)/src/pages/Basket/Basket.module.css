@@ -1,0 +1,19 @@
+.basket {
+  padding: 15px 60px;
+  background-color: #f3f3f7;
+  min-height: 84.5vh;
+}
+.content {
+  background-color: #fff;
+  padding: 20px 30px;
+  border-radius: 20px;
+}
+.title {
+  font-size: 27px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+.loading {
+  text-align: center;
+  margin-top: 100px;
+}

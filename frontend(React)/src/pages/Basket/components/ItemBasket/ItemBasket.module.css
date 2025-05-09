@@ -1,0 +1,50 @@
+.itemBasket {
+  background-color: #fff;
+  padding: 20px 30px;
+  border-radius: 20px;
+  display: flex;
+  margin-bottom: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+.nameInfo {
+  display: flex;
+}
+.img {
+  height: 150px;
+}
+.price {
+  font-size: 22px;
+}
+.name {
+  font-size: 22px;
+  padding-left: 30px;
+}
+.price {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.count {
+  margin-bottom: 10px;
+}
+.buttonCount {
+  height: 30px;
+  width: 30px;
+  font-size: 18px;
+  background-color: #fff;
+  margin: 0px 10px;
+  border: 1px solid #dfdee2;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.priceInfo {
+  text-align: center;
+}
+.delete {
+  font-size: 14px;
+  color: #8e8e93;
+  cursor: pointer;
+}
+.delete:hover {
+  color: black;
+}
