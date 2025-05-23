@@ -1,5 +1,4 @@
 .profile {
-  padding: 15px 70px;
   min-height: 84.5vh;
 }
 .loading {
@@ -12,6 +11,7 @@
   padding-bottom: 10px;
 }
 .info {
+  padding: 15px 70px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -28,4 +28,19 @@
 }
 .button:hover {
   background-color: #980c24;
+}
+.items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: left;
+}
+.recommendations {
+  background-color: #f3f3f7;
+  padding: 5px 70px 15px;
+}
+.titleRecommendations {
+  font-size: 27px;
+  font-weight: 600;
+  padding: 10px 0px;
 }

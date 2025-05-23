@@ -19,6 +19,7 @@
 .name {
   font-size: 22px;
   padding-left: 30px;
+  margin-bottom: 10px;
 }
 .price {
   font-weight: 600;
@@ -28,6 +29,7 @@
   margin-bottom: 10px;
 }
 .buttonCount {
+  color: #dfdee2;
   height: 30px;
   width: 30px;
   font-size: 18px;
@@ -47,4 +49,21 @@
 }
 .delete:hover {
   color: black;
+}
+.characteristicsContainer {
+  display: flex;
+  align-items: flex-end;
+  padding: 5px 30px;
+}
+.characteristics {
+  color: #8c8c8c;
+}
+.characteristicsInfo {
+  width: 500px;
+}
+.line {
+  flex-grow: 1;
+  border-bottom: 1px solid #eee;
+  margin: 0 5px;
+  position: relative;
 }

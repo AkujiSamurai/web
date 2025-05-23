@@ -2,9 +2,12 @@ import { Link, useNavigate } from "react-router-dom";
 import styles from "./Login.module.css";
 import { useState } from "react";
 import { authUser } from "../../../../Api/api";
+import { useDispatch } from "react-redux";
+import { setAuthToken } from "../../../../redux/authReducer/authActions";
 
 export const Login = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const [login, setLogin] = useState();
   const [password, setPassword] = useState();
@@ -12,10 +15,9 @@ export const Login = () => {
 
   const loginUser = async () => {
     const data = await authUser(login, password);
-    console.log(data);
 
     if (data.success) {
-      localStorage.setItem("user_id", data.item.id);
+      dispatch(setAuthToken(data.token));
       navigate("/profile");
     } else {
       setErrorStatus(data.status);

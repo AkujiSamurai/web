@@ -4,17 +4,20 @@ namespace App\Http\Controllers;
 
 use App\Models\Basket;
 use Illuminate\Http\Request;
+use PHPOpenSourceSaver\JWTAuth\Facades\JWTAuth;
 
 class BasketControllers extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
-        $request->validate([
-            'id_user' => 'required|integer'
-        ]);
+        $user = JWTAuth::parseToken()->authenticate();
+
+        if (!$user) {
+            return response()->json(['message' => 'Пользователь не найден'], 404);
+        }
 
         return Basket::with('product')
-            ->where("id_user", $request->id_user)
+            ->where("id_user", $user->id)
             ->get();
     }
 

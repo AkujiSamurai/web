@@ -25,7 +25,26 @@ export const ItemBasket = ({ itemBasket, updateBasket }) => {
     <div className={styles.itemBasket}>
       <div className={styles.nameInfo}>
         <img className={styles.img} src={itemBasket.product.img} />
-        <div className={styles.name}>{itemBasket.product.title}</div>
+        <div>
+          <div className={styles.name}>{itemBasket.product.title}</div>
+          <div className={styles.characteristicsInfo}>
+            <div className={styles.characteristicsContainer}>
+              <div className={styles.characteristics}>Модель</div>
+              <span className={styles.line} />
+              <div>{itemBasket.product.model}</div>
+            </div>
+            <div className={styles.characteristicsContainer}>
+              <div className={styles.characteristics}>Оперативная память</div>
+              <span className={styles.line} />
+              <div>{itemBasket.product.ram_gb} ГБ</div>
+            </div>
+            <div className={styles.characteristicsContainer}>
+              <div className={styles.characteristics}>Встроеннная память</div>
+              <span className={styles.line} />
+              <div>{itemBasket.product.storage_gb} ГБ</div>
+            </div>
+          </div>
+        </div>
       </div>
       <div className={styles.priceInfo}>
         <div className={styles.price}>

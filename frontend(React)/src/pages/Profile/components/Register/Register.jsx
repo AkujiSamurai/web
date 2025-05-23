@@ -18,7 +18,6 @@ export const Register = () => {
       const data = await registerUser(login, password);
 
       if (data.success) {
-        localStorage.setItem("user_id", data.item.id);
         navigate("/profile");
       } else {
         setErrorStatus(data.status);
@@ -39,13 +38,17 @@ export const Register = () => {
           />
           <input
             type="password"
-            className={`${styles.input} ${errorStatus === "password_confirmation" && styles.error}`}
+            className={`${styles.input} ${
+              errorStatus === "password_confirmation" && styles.error
+            }`}
             placeholder="Password"
             onChange={(e) => setPassword(e.target.value)}
           />
           <input
             type="password"
-            className={`${styles.input} ${errorStatus === "password_confirmation" && styles.error}`}
+            className={`${styles.input} ${
+              errorStatus === "password_confirmation" && styles.error
+            }`}
             placeholder="Confirm password"
             onChange={(e) => setConfirmPassword(e.target.value)}
           />

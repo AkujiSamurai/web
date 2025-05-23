@@ -1,4 +1,23 @@
 import axios from "axios"
+import store from "../redux/store";
+
+axios.interceptors.request.use(config => {
+    const token = store.getState().auth.token;
+    if (token) {
+        config.headers.Authorization = `Bearer ${token}`;
+    }
+    return config;
+}, error => {
+    return Promise.reject(error);
+});
+
+axios.interceptors.response.use(response => response, error => {
+    if (error.response.status === 401) {
+        localStorage.removeItem('token');
+        window.location.href = '/login';
+    }
+    return Promise.reject(error);
+});
 
 export const fetchItems = async () => {
     try {
@@ -20,9 +39,9 @@ export const fetchItem = async (id) => {
     }
 }
 
-export const fetchBasket = async (user_id) => {
+export const fetchBasket = async () => {
     try {
-        const response = await axios.get('basket', { params: { id_user: user_id } });
+        const response = await axios.get('basket');
         return response.data;
     }
     catch (error) {
@@ -30,9 +49,9 @@ export const fetchBasket = async (user_id) => {
     }
 }
 
-export const fetchUser = async (user_id) => {
+export const fetchUser = async () => {
     try {
-        const response = await axios.get(`profile/${user_id}`);
+        const response = await axios.get(`profile`);
         return response.data;
     }
     catch (error) {
@@ -74,6 +93,20 @@ export const registerUser = async (login, password) => {
     }
 }
 
+export const logoutUser = async () => {
+    try {
+        const response = await axios.post('logout');
+        delete axios.defaults.headers.common['Authorization'];
+        
+        return response.data;
+    }
+    catch (error) {
+        delete axios.defaults.headers.common['Authorization'];
+
+        console.error('Ошибка при выходе', error);
+    }
+}
+
 export const addItemToBasket = async (user_id, product_id) => {
     try {
         const response = await axios.post('create', { id_user: user_id, id_product: product_id });
@@ -111,5 +144,35 @@ export const deleteItemInBasket = async (id) => {
     }
     catch (error) {
         console.error("Ошибка при удалении товара из корзины", error);
+    }
+}
+
+export const fetchUserViews = async (user_id) => {
+    try {
+        const response = await axios.get('user/view', { params: { id_user: user_id } });
+        return response.data;
+    }
+    catch (error) {
+        console.error('Ошибка при загрузке данных, просмотренных пользователем', error);
+    }
+}
+
+export const addUserView = async (user_id, product_id) => {
+    try {
+        const response = await axios.post('user/create', { id_user: user_id, id_product: product_id });
+        return response;
+    }
+    catch (error) {
+        console.error('Ошибка при создании данных, просмотренных пользователем', error);
+    }
+}
+
+export const fetchUserRecommendation = async (user_id) => {
+    try {
+        const response = await axios.get('user/recommendations', { params: { id_user: user_id } });
+        return response.data;
+    }
+    catch (error) {
+        console.error('Ошибка при загрузке рекомендаций', error);
     }
 }

@@ -3,6 +3,8 @@
 use App\Http\Controllers\CatalogControllers;
 use App\Http\Controllers\UserControllers;
 use App\Http\Controllers\BasketControllers;
+use App\Http\Controllers\UserViewControllers;
+use App\Http\Controllers\RecommendationController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -26,7 +28,12 @@ Route::put('increaseCount', [BasketControllers::class, 'increaseCount']);
 Route::put('decreaseCount', [BasketControllers::class, 'decreaseCount']);
 Route::delete('delete/{id}', [BasketControllers::class, 'delete']);
 
-Route::get('profile/{id}', [UserControllers::class, 'info']);
+Route::get('profile', [UserControllers::class, 'info']);
 Route::post('register', [UserControllers::class, 'register']);
 Route::post('login', [UserControllers::class, 'login']);
+Route::post('logout', [UserController::class, 'logout']);
+
+Route::post('user/create', [UserViewControllers::class, 'create']);
+Route::get('user/view', [UserViewControllers::class, 'index']);
+Route::get('user/recommendations', [RecommendationController::class, 'index']);
 

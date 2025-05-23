@@ -12,6 +12,8 @@ class Product extends Model
         'title',
         'model',
         'price',
-        'description'
+        'description',
+        'ram_gb',
+        'storage_gb'
     ];
 }
